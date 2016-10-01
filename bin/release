@@ -1,0 +1,8 @@
+#!/bin/sh
+env WEBPACK_ENV=production webpack --progress -p
+yes | cp -r dist/* ../react-mobx-express-boilerplate-gh-pages/
+yes | cp index.html ../react-mobx-express-boilerplate-gh-pages/
+cd ../react-mobx-express-boilerplate-gh-pages
+git add -A
+git commit -m "release $(date "+%Y-%m-%d %H:%I:%S")"
+git push origin gh-pages
